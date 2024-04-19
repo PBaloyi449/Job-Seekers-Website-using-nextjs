@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Entry_level_Job {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  apply            String
+  closing_date     String   @map("closing date")
+  company          String
+  description      String
+  location         String
+  name             String
+  requirements     String
+  responsibilities String
+  postedAt         DateTime @default(now())
+
+  @@map("Entry-level Jobs")
+}
