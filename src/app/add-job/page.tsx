@@ -15,14 +15,15 @@ async function addJob(formData: FormData){
     const responsibilities = formData.get("responsibilities")?.toString();
     const requirements = formData.get("requirements")?.toString();
     //const link = formData.get("apply")?.toString();
-    const date = formData.get("date")?.toString();
+    const closing_date = formData.get("date")?.toString();
+    const apply = formData.get("apply")?.toString();
 
-    if (!name || !company || !location || !description|| !responsibilities || !requirements || !date ){
+    if (!name || !company || !location || !description|| !responsibilities || !requirements || !closing_date || !apply ){
         throw  Error("Missing required fields");
     }
 
     await prisma.entry_level_Job.create({
-        data: {name, company, location, description, responsibilities, requirements, date}
+        data: {name, company, location, description, responsibilities, requirements, closing_date, apply}
     })
 
     redirect("/");
