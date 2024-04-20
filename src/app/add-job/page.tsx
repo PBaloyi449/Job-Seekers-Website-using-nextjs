@@ -8,22 +8,22 @@ export const metadata = {
 async function addJob(formData: FormData){
     "use server";
 
-    const name = formData.get("name")?.toString();
+    const job = formData.get("job")?.toString();
     const company = formData.get("company")?.toString();
     const location = formData.get("location")?.toString();
     const description = formData.get("description")?.toString();
     const responsibilities = formData.get("responsibilities")?.toString();
     const requirements = formData.get("requirements")?.toString();
-    //const link = formData.get("apply")?.toString();
-    const closing_date = formData.get("closing_date")?.toString();
-    const apply = formData.get("apply")?.toString();
+    const link = formData.get("apply")?.toString();
+    const closingDate = formData.get("closingDate")?.toString();
+   
 
-    if (!name || !company || !location || !description|| !responsibilities || !requirements || !closing_date || !apply ){
+    if (!job || !company || !location || !description|| !responsibilities || !requirements || !closingDate || !link ){
         throw  Error("Missing required fields");
     }
 
-    await prisma.entry_level_Job.create({
-        data: {name, company, location, description, responsibilities, requirements, closing_date, apply}
+    await prisma.entry_level_Jobs.create({
+        data: {company,description,location,requirements,responsibilities,closingDate,job,link}
     })
 
     redirect("/");
@@ -36,8 +36,8 @@ export default function addJobPage(){
             <form action={addJob}>
                 <input 
                 required
-                name="name"
-                placeholder="Name"
+                name="job"
+                placeholder="Job Title"
                 className="input-bordered input mb-3 w-full">
                 </input>
                 <textarea 

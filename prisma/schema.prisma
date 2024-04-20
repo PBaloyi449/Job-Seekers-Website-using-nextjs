@@ -7,17 +7,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Entry_level_Job {
-  id               String   @id @default(auto()) @map("_id") @db.ObjectId
-  apply            String
-  date             String   
+model Entry_level_Jobs {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  closingDate      String
   company          String
   description      String
+  job              String
+  link             String
   location         String
-  name             String
   requirements     String
   responsibilities String
-  postedAt         DateTime @default(now())
 
-  @@map("Entry-level Jobs")
+  @@map("Entry-level-Jobs")
 }
