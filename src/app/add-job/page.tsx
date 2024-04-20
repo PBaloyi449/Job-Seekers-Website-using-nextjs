@@ -15,7 +15,7 @@ async function addJob(formData: FormData){
     const responsibilities = formData.get("responsibilities")?.toString();
     const requirements = formData.get("requirements")?.toString();
     //const link = formData.get("apply")?.toString();
-    const closing_date = formData.get("date")?.toString();
+    const closing_date = formData.get("closing_date")?.toString();
     const apply = formData.get("apply")?.toString();
 
     if (!name || !company || !location || !description|| !responsibilities || !requirements || !closing_date || !apply ){

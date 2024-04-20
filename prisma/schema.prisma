@@ -10,7 +10,7 @@ datasource db {
 model Entry_level_Job {
   id               String   @id @default(auto()) @map("_id") @db.ObjectId
   apply            String
-  closing_date     String   @map("closing date")
+  date             String   
   company          String
   description      String
   location         String
