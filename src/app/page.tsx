@@ -13,10 +13,13 @@ export default async function Home() {
         <div className="hero-content flex-row">
           <div>
             <h1 className="text-5xl font-bold">{jobs[0].job}</h1>
-            <p className="py-6">{jobs[0].description}</p>
+            <p className="py-2">{jobs[0].description}</p>
+            <p><b>{`Location: ${jobs[0].location}`}</b></p>
+            <p><b>{`Closing Date:${jobs[0].closingDate}`}</b></p>
+
             <Link
               href={"/jobs/" + jobs[0].id}
-              className="btn-primary btn">
+              className="btn-primary btn my-4">
                 Read More
               </Link>
               
@@ -24,7 +27,12 @@ export default async function Home() {
         </div>
 
       </div>
-      <JobCard job= {jobs[0]} />
+      <div className="my-4" gap-4>
+        {jobs.slice(1).map(job =>
+          <JobCard job={job} key={job.id} />
+        )}
+      </div>
+      
     </div>
   );
 }

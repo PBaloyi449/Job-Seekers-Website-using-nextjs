@@ -9,7 +9,7 @@ export default function JobCard({job}: JobCardProps ) {
     return(
         <Link
         href={"/jobs/" + job.id}
-        className="card w-full bg-base-100 hover:shadow-xl transition-shadow">
+        className="card w-full bg-base-200 hover:shadow-xl transition-shadow">
         <div className="card-body">
             <h2 className="card-title">
                 {job.job}
