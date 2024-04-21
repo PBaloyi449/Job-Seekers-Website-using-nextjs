@@ -2,6 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/logo.png"
 import { redirect } from "next/navigation";
+import UserMenuButton from "./UserMenuButton";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+
 
 async function searchJobs(formData: FormData) {
     "use server";
@@ -13,7 +17,9 @@ async function searchJobs(formData: FormData) {
     }
 }
 
-export default function Navbar() {
+export default async function Navbar() {
+    const session = await getServerSession(authOptions);
+
     return(
         <div className="bg-base-100">
             <div className="navbar max-w-7xl m-auto flex-col sm:flex-row gap-2">
@@ -24,7 +30,7 @@ export default function Navbar() {
                     </Link>
                 </div>
                 <div className="flex-none gap-2">
-                    <form action="{searchJobs}">
+                    <form action={searchJobs}>
                         <div className="form-control">
                             <input
                                name="searchQuery" 
@@ -32,6 +38,7 @@ export default function Navbar() {
                                className="input input-bordered w-full min-w{100px}"                            />
                         </div>
                     </form>
+                    <UserMenuButton session={session}/>
                 </div>
             </div>
         </div>
