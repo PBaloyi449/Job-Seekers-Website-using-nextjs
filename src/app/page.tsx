@@ -1,4 +1,5 @@
 import JobCard from "@/components/JobCard";
+import PaginationBar from "@/components/Pagination";
 import prisma from "@/lib/prima";
 import Link from "next/link";
 
@@ -33,6 +34,7 @@ export default async function Home() {
         )}
       </div>
       
+      <PaginationBar currentPage={3} totalPages={99} />
     </div>
   );
 }
