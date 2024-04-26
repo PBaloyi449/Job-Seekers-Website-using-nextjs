@@ -3,13 +3,32 @@ import PaginationBar from "@/components/Pagination";
 import prisma from "@/lib/prima";
 import Link from "next/link";
 
-export default async function Home() {
+interface HomeProps{
+  searchParams: {page: string}
+}
+
+
+export default async function Home({
+  searchParams: { page = "1" },
+}: HomeProps) {
+  const currentPage = parseInt(page);
+
+  const pageSize = 6
+  const heroItemCount = 1
+
+  const totalItemCount = await prisma.entry_level_Jobs.count();
+
+  const totalPages = Math.ceil((totalItemCount - heroItemCount) / pageSize)
+
   const jobs = await prisma.entry_level_Jobs.findMany({
-    orderBy: {id: "desc"}
+    orderBy: {id: "desc"},
+    skip: (currentPage - 1) * pageSize + (currentPage === 1 ? 0: heroItemCount),
+    take: pageSize + (currentPage === 1 ? heroItemCount: 0),
   })
 
   return (
     <div className="flex flex-col items-center">
+      {currentPage === 1 &&
       <div className="hero rounded-xl bg-base-200">
         <div className="hero-content flex-row">
           <div>
@@ -28,13 +47,17 @@ export default async function Home() {
         </div>
 
       </div>
-      <div className="my-4" gap-4>
-        {jobs.slice(1).map(job =>
+  }
+      <div className="my-4 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 overflow-hidden">
+        {(currentPage === 1 ? jobs.slice(1): jobs).map(job =>
           <JobCard job={job} key={job.id} />
         )}
       </div>
       
-      <PaginationBar currentPage={3} totalPages={99} />
+
+    {totalPages > 1 && (  
+      <PaginationBar currentPage={currentPage} totalPages={totalPages} />
+    )}
     </div>
   );
 }
