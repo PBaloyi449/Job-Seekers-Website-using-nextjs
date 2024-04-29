@@ -2,7 +2,7 @@ import prisma from "@/lib/prima";
 import {redirect} from "next/navigation";
 
 export const metadata = {
-    title: "Add Job - Career Connect"
+    title: "Add Job - Employment Echo"
 }
 
 async function addJob(formData: FormData){

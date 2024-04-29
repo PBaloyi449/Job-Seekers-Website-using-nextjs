@@ -8,7 +8,7 @@ import SessionProvider from "./SessionProvider"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Career Connect",
+  title: "Employment Echo",
   description: "We connect you to your future job",
 };
 

@@ -25,8 +25,8 @@ export default async function Navbar() {
             <div className="navbar max-w-7xl m-auto flex-col sm:flex-row gap-2">
                 <div className="flex-1">
                     <Link href="/" className="btn btn-ghost text-xl normal-case">
-                        <Image src={logo} height={40} width={40} alt="Career Connect logo"></Image>
-                        Career Connect
+                        <Image src={logo} height={40} width={40} alt="Employment Echo logo"></Image>
+                        Employment Echo
                     </Link>
                 </div>
                 <div className="flex-none gap-2">

@@ -22,7 +22,7 @@ export async function generateMetadata(
     const job = await getJob(id); 
 
     return {
-        title: job.job + " - Career Connect",
+        title: job.job + " - Employment Echo",
         description: job.description, 
     }
 }
