@@ -22,7 +22,7 @@ export default function JobCard({job}: JobCardProps ) {
             <div>
             <Link
               href={"/jobs/" + job.id}
-              className="btn-primary btn lg:w-full">
+              className="btn-primary btn w-full">
                 Read More
               </Link>
               </div>
