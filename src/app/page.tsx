@@ -1,6 +1,6 @@
 import JobCard from "@/components/JobCard";
 import PaginationBar from "@/components/Pagination";
-import prisma from "@/lib/prima";
+import prisma from "@/lib/prisma";
 import Link from "next/link";
 
 interface HomeProps{

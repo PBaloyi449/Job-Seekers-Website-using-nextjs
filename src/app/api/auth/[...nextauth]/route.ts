@@ -1,6 +1,6 @@
-import prisma from "@/lib/prima";
+import prisma from "@/lib/prisma";
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import NextAuth from "next-auth/next";
+import NextAuth from "next-auth";
 import { NextAuthOptions } from "next-auth";
 import { Adapter } from "next-auth/adapters";
 import GoogleProvider from "next-auth/providers/google";

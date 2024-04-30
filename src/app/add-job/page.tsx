@@ -1,4 +1,4 @@
-import prisma from "@/lib/prima";
+import prisma from "@/lib/prisma";
 import {redirect} from "next/navigation";
 
 export const metadata = {

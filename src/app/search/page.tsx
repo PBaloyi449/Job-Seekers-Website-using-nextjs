@@ -1,5 +1,5 @@
 import JobCard from "@/components/JobCard";
-import prisma from "@/lib/prima";
+import prisma from "@/lib/prisma";
 import { Metadata } from "next";
 
 interface SearchPageProps {
