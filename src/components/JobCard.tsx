@@ -7,9 +7,7 @@ interface JobCardProps{
 
 export default function JobCard({job}: JobCardProps ) {
     return(
-        <Link
-        href={"/jobs/" + job.id}
-        className="card w-full bg-base-200 hover:shadow-xl transition-shadow">
+        <div className="card w-full bg-base-200 hover:shadow-xl transition-shadow">
         <div className="card-body">
             <div className="overflow-hidden max-h-60">
             <h2 className="card-title text-4xl">
@@ -27,7 +25,7 @@ export default function JobCard({job}: JobCardProps ) {
               </Link>
               </div>
         </div>
-        </Link>
+        </div>
     
     )
 }
