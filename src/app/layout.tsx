@@ -27,6 +27,17 @@ export default function RootLayout({
     )}
       </head>
       <body className={inter.className}>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5428303296729283"
+     crossOrigin="anonymous"></script>
+<ins className="adsbygoogle"
+     style={{ display: 'block' }}
+     data-ad-client="ca-pub-5428303296729283"
+     data-ad-slot="9928664512"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
        <Navbar/>
         <main className="p-4 max-w-7xl m-auto min-w-[300px]">
         {children}
