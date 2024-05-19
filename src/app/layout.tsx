@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer";
 import { Analytics } from "@vercel/analytics/react"
+import AdSense from "@/components/AdSense";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5428303296729283"
-     crossOrigin="anonymous"></script>
-      <meta name="google-adsense-account" content="ca-pub-5428303296729283"/>
+        <AdSense pId="ca-pub-5428303296729283"/>
       </head>
       <body className={inter.className}>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5428303296729283"
