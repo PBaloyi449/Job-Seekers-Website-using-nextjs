@@ -5,6 +5,7 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer";
 import { Analytics } from "@vercel/analytics/react"
 import AdSense from "@/components/AdSense";
+import AdBanner from "@/components/AdBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,10 +26,12 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
        <Navbar/>
+       <AdBanner dataAdFormat="auto" dataFullWidthResponsive={true} dataAdSlot="9928664512"/>
         <main className="p-4 max-w-7xl m-auto min-w-[300px]">
         {children}
         <Analytics />
         </main>
+        <AdBanner dataAdFormat="auto" dataFullWidthResponsive={true} dataAdSlot="9928664512"/>
         <Footer />
         </body>
     </html>

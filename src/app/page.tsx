@@ -2,6 +2,7 @@ import JobCard from "@/components/JobCard";
 import PaginationBar from "@/components/Pagination";
 import prisma from "@/lib/prisma";
 import Link from "next/link";
+import AdBanner from "@/components/AdBanner";
 
 interface HomeProps{
   searchParams: {page: string}
@@ -28,6 +29,7 @@ export default async function Home({
 
   return (
     <div className="flex flex-col items-center">
+      <AdBanner dataAdFormat="auto" dataFullWidthResponsive={true} dataAdSlot="9928664512"/>
       {currentPage === 1 &&
       <div className="hero rounded-xl bg-base-200">
         <div className="hero-content flex-row">
@@ -49,6 +51,7 @@ export default async function Home({
       </div>
   }
       <div className="my-4 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 overflow-hidden">
+      <AdBanner dataAdFormat="auto" dataFullWidthResponsive={true} dataAdSlot="9928664512"/>
         {(currentPage === 1 ? jobs.slice(1): jobs).map(job =>
           <JobCard job={job} key={job.id} />
         )}
