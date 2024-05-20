@@ -26,7 +26,6 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
        <Navbar/>
-       <AdBanner dataAdFormat="auto" dataFullWidthResponsive={true} dataAdSlot="9928664512"/>
         <main className="p-4 max-w-7xl m-auto min-w-[300px]">
         {children}
         <Analytics />
