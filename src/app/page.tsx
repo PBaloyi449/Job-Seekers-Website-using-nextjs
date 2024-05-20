@@ -14,7 +14,7 @@ export default async function Home({
 }: HomeProps) {
   const currentPage = parseInt(page);
 
-  const pageSize = 6
+  const pageSize = 8
   const heroItemCount = 1
 
   const totalItemCount = await prisma.entry_level_Jobs.count();
