@@ -1,19 +1,24 @@
 import Script from 'next/script';
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-type AdsenseTypes = {
-    pId: string;
-}
+type AdsenseProps = {
+  pId: string;
+};
 
-const AdSense = ({ pId }: AdsenseTypes) => {
+const AdSense: React.FC<AdsenseProps> = ({ pId }) => {
   return (
     <Script
-    async
-    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${pId}`}
-    crossOrigin='anonymous'
-    strategy='afterInteractive'
-/>
-  )
-}
+      async
+      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${pId}`}
+      crossOrigin="anonymous"
+      strategy="afterInteractive"
+    />
+  );
+};
 
-export default AdSense
+AdSense.propTypes = {
+  pId: PropTypes.string.isRequired,
+};
+
+export default AdSense;
