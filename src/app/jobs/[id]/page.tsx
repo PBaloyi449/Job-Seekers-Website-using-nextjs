@@ -27,7 +27,7 @@ export async function generateMetadata(
     };
 }
 
-const renderSentences = (text: string) => {
+const renderSentencesWithBullets = (text: string) => {
     return (
         <ul className="list-disc ml-5 space-y-2">
             {text.split(/(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s/).map((sentence, index) => (
@@ -52,11 +52,11 @@ export default async function JobPage(
             </div>
             <div>
                 <h3 className="text-2xl font-bold">Description</h3>
-                {renderSentences(job.description)}<br></br>
+                <p>{job.description}</p><br></br>
                 <h3 className="text-2xl font-bold">Responsibilities</h3>
-                {renderSentences(job.responsibilities)}<br></br>
+                {renderSentencesWithBullets(job.responsibilities)}<br></br>
                 <h3 className="text-2xl font-bold">Requirements</h3>
-                {renderSentences(job.requirements)}<br></br>
+                {renderSentencesWithBullets(job.requirements)}<br></br>
             </div>
             <Link
                 href={job.link} target="_blank"
