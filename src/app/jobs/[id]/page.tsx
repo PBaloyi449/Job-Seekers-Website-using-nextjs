@@ -28,9 +28,13 @@ export async function generateMetadata(
 }
 
 const renderSentences = (text: string) => {
-    return text.split(/(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s/).map((sentence, index) => (
-        <p key={index}>{sentence.trim()}</p>
-    ));
+    return (
+        <ul>
+            {text.split(/(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s/).map((sentence, index) => (
+                <li key={index}>{sentence.trim()}</li>
+            ))}
+        </ul>
+    );
 };
 
 export default async function JobPage(
