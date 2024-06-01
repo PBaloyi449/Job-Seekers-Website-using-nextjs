@@ -29,7 +29,7 @@ export async function generateMetadata(
 
 const renderSentences = (text: string) => {
     return (
-        <ul>
+        <ul className="list-disc ml-5 space-y-2">
             {text.split(/(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s/).map((sentence, index) => (
                 <li key={index}>{sentence.trim()}</li>
             ))}
@@ -43,7 +43,7 @@ export default async function JobPage(
     const job = await getJob(id);
 
     return (
-        <div>
+        <div className="p-4">
             <div>
                 <h1 className="text-4xl font-bold">{job.job}</h1>
                 <p>{`Company: ${job.company}`}</p>
